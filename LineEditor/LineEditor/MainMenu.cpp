@@ -1,15 +1,15 @@
 #include "stdafx.h"
-#include "MenuOptions.h"
+#include "MainMenu.h"
 
 using namespace std;
 
-MenuOptions::MenuOptions() {
+MainMenu::MainMenu() {
 	// Constructor 
 	usersName = "";
 }
 
 // Ask for users name, pause, load main menu
-void MenuOptions::runIntro() {
+void MainMenu::runIntro() {
 	// Get the users name
 	cout << "Welcome! What should we call you?\n>> ";
 	getline(cin, usersName);
@@ -22,7 +22,7 @@ void MenuOptions::runIntro() {
 }
 
 // Display the current time, personalize the user, look for input
-void MenuOptions::runMainMenu() {
+void MainMenu::runMainMenu() {
 	// Clear the screen
 	system("cls");
 	// Get the date and time
@@ -33,7 +33,7 @@ void MenuOptions::runMainMenu() {
 }
 
 // Use SYSTEMTIME to get the local time
-void MenuOptions::getSystemTime() {
+void MainMenu::getSystemTime() {
 	SYSTEMTIME lt;
     GetLocalTime(&lt);    
     printf("The current time is: %02d:%02d\n", lt.wHour, lt.wMinute);

@@ -6,10 +6,10 @@
 #include <iostream>
 #include <string>
 using namespace std;
-class MenuOptions {
+class MainMenu {
 public:
 	// Constructor
-	MenuOptions();
+	MainMenu();
 	
 	// Functions
 	void runIntro();
