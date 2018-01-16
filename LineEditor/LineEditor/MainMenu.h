@@ -5,6 +5,8 @@
 #include <windows.h>
 #include <iostream>
 #include <string>
+#include <sstream>
+
 using namespace std;
 class MainMenu {
 public:
@@ -18,5 +20,8 @@ public:
 
 	// Variables
 	string usersName;
+	bool gettingMenuInput;
+	string menuInput;
+	string finalizedMenuInput[3];
 };
 
