@@ -4,6 +4,7 @@
 
 #pragma once
 #include <iostream>
+#include "Node.h"
 
 class LinkedList {
 public:
@@ -14,5 +15,8 @@ public:
 	void readIntoLinkedList(std::string fileName);
 
 	// Variables
+
+private:
+	
 };
 
