@@ -1,22 +1,21 @@
-/*
- * DATA STRUCTURES LINE EDITOR // STEPHEN FETINKO 2018
- */
-
 #pragma once
-#include "LinkedList.h"
+
+#include <iostream>
 #include <fstream>
+#include "LinkedList.h"
 
 class Editor {
 public:
-	// Make an object for the linked list
+	// Linked List object
 	LinkedList linkedList;
-	// Constructor and destructor
+	// Constructor & Destructor
 	Editor();
 	~Editor();
 	// Functions
-	void readIntoLinkedList(std::string fileName);
+	void readFromFile(std::string fileName);
+
 	// Variables
+	std::ifstream file;
 	std::string line;
-	int numOfLines;
 };
 

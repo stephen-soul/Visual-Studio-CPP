@@ -1,14 +1,12 @@
 /*
  * DATA STRUCTURES LINE EDITOR // STEPHEN FETINKO 2018
  */
+#include <string>
 
 #pragma once
 class Node {
 public:
-	// Constructor
-	Node();
-	
 	// Variables
 	Node *next;
-	int data;
+	std::string data;
 };

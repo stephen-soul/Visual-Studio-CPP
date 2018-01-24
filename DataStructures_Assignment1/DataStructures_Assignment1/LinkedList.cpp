@@ -4,91 +4,114 @@
 
 #include "stdafx.h"
 #include "LinkedList.h"
+#include <iostream>
 
 
-LinkedList::LinkedList() : first(nullptr) {
-	// Constructor
+LinkedList::LinkedList() {
 }
 
 
 LinkedList::~LinkedList() {
-	// Destructor
 	Node *node = first;
+
 	while (node != nullptr) {
 		Node *temp = node;
+
 		node = node->next;
+
 		delete temp;
 	}
 }
 
-void LinkedList::add(std::string line) {
+void LinkedList::add(std::string num) {
 	Node *node = new Node();
-	node->data = line;
-	if (first == nullptr) {
+	node->data = num;
+
+	if (first == NULL) {
 		first = node;
 	} else {
-		Node *currentNode = first;
-		Node *previousNode = nullptr;
-		while (currentNode != nullptr) {
-			previousNode = currentNode;
-			currentNode = currentNode->next;
+		Node *currNode = first;
+		Node *prevNode = NULL;
+
+		while (currNode != NULL) {
+			prevNode = currNode;
+			currNode = currNode->next;
 		}
-		if (previousNode != nullptr)
-			previousNode;
+
+		if (prevNode != NULL) {
+			prevNode->next = node;
+		}
 	}
 }
 
-void LinkedList::deleteValue(std::string lineValue) {
+void LinkedList::deleteValue(std::string value) {
 	Node *node = first;
 	Node *prev = nullptr;
+
 	while (node != nullptr) {
-		if (node->data == value)
+		if (node->data == value) {
 			break;
+		}
+
 		prev = node;
 		node = node->next;
 	}
+
 	if (node != nullptr) {
 		if (node == first) {
 			first = node->next;
 		} else {
 			prev->next = node->next;
 		}
+
 		delete node;
 	}
 }
 
-void LinkedList::deleteNode(std::string lineNode) {
+void LinkedList::deleteNode(int nodenum) {
 	int index = -1;
+
 	Node *node = first;
 	Node *prev = nullptr;
+
 	while (node != nullptr) {
 		index++;
-		if (index == lineNode)
+
+		if (index == nodenum) {
 			break;
+		}
+
 		prev = node;
 		node = node->next;
 	}
+
 	if (index >= 0) {
 		if (node == first) {
 			first = node->next;
 		} else {
 			prev->next = node->next;
 		}
+
 		delete node;
 	}
 }
 
-void LinkedList::insertAfterValue(int value, int num) {
+void LinkedList::insertAfterValue(std::string value, std::string num) {
 	Node *node = new Node();
 	node->data = num;
-	// Search for node to insert after
+
+	// search for node to insert after
 	Node *prev = first;
+
 	while (prev != nullptr) {
-		if (prev->data == value)
+		if (prev->data == value) {
 			break;
+		}
+
 		prev = prev->next;
 	}
-	// Insert node into list
+
+	// insert node into list
 	if (first == nullptr) {
 		first = node;
 	} else {
@@ -96,35 +119,50 @@ void LinkedList::insertAfterValue(int value, int num) {
 			node->next = prev->next;
 			prev->next = node;
 		} else {
-			// Default to add if no node was found
+			// could not find the node to insert after
+			// so defaulting to Add function
 			add(num);
 		}
 	}
 }
 
-void LinkedList::insertBeforeNode(int nodeNum, int num) {
+void LinkedList::insertBeforeNode(int nodenum, std::string num) {
 	int index = -1;
-	Node *newNode = new Node();
-	newNode->data = num;
+	Node *newnode = new Node();
+	newnode->data = num;
 	Node *node = first;
 	Node *prev = first;
+
 	while (node != nullptr) {
 		index++;
-		if (index == nodeNum)
+
+		if (index == nodenum) {
 			break;
+		}
+
 		prev = node;
 		node = node->next;
 	}
-	// Insert node into list
+
+	// insert node into list
 	if (first == nullptr) {
-		first = newNode
+		first = newnode;
 	} else {
 		if (node != nullptr) {
-			prev->next = newNode;
-			newNode->next = node;
+			prev->next = newnode;
+			newnode->next = node;
 		} else {
-			// If we can't find a node to insert after default to add
+			// could not find the node to insert after
+			// so defaulting to Add function
 			add(num);
 		}
+	}
+}
+
+void LinkedList::display() {
+	Node *node = 0;
+	while (node) {
+		std::cout << node->data;
+		node = node->next;
 	}
 }

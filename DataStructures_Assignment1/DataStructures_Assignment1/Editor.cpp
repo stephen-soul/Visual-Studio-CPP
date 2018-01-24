@@ -1,34 +1,22 @@
-/*
- * DATA STRUCTURES LINE EDITOR // STEPHEN FETINKO 2018
- */
-
 #include "stdafx.h"
 #include "Editor.h"
-
 
 Editor::Editor() {
 }
 
-
 Editor::~Editor() {
 }
 
-void Editor::readIntoLinkedList(std::string fileName) {
-	// Make an ifstream for the file
-	std::ifstream file;
-	// Open the file
-	file.open(fileName);
-	// If it fails, notify the user, else, add it to the linked list
+void Editor::readFromFile(std::string fileName) {
+	// Use an ifstream to try to open a file
+	file.open("C:\\Users\\Stephen\\source\\repos\\Visual-Studio-CPP\\DataStructures_Assignment1\\DataStructures_Assignment1\\Debug\\" + fileName, true);
 	if (file.fail()) {
-		std::cout << "There was a problem opening the file. Please check the file name and try again.";
+		std::cout << "Could not open file. Please try again later." << std::endl << std::endl;
 	} else {
-		if (file.is_open()) {
-			while (std::getline(file, line)) {
-				numOfLines++;
-				linkedList.add(numOfLines);
-			}
-			file.close();
+		while (getline(file, line)) {
+			linkedList.add(line);
 		}
+		file.close();
 	}
-	linkedList.
+	linkedList.display();
 }
