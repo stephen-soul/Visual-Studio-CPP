@@ -5,6 +5,7 @@
 #pragma once
 #include <iostream>
 #include "Node.h"
+#include <string>
 
 class LinkedList {
 public:
@@ -12,11 +13,11 @@ public:
 	LinkedList();
 	~LinkedList();
 	// Functions
-	void readIntoLinkedList(std::string fileName);
-
-	// Variables
-
+	void add(std::string line);
+	void deleteValue(std::string lineValue);
+	void deleteNode(std::string lineNode);
+	void insertAfterValue(std::string lineValue, std::string lineNode);
+	void insertBeforeNode(std::string lineNode, std::string line);
 private:
-	
+	Node *first;
 };
-

@@ -35,7 +35,7 @@ void MainMenu::runMainMenu() {
 			* USER WANTS BASED ON THE 0 SPOT IN THE ARRAY THAT THE STRINGSTREAM DUMPS
 			*/
 		int i = 0;
-		string userChoice[3];
+		string userChoice[4];
 		stringstream usersInput(menuInput);
 		transform(userChoice[0].begin(), userChoice[0].end(), userChoice[0].begin(), ::tolower);
 		while (usersInput.good() && i < 3) {
