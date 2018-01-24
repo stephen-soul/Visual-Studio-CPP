@@ -4,6 +4,7 @@
 
 #include "stdafx.h"
 #include "LinkedList.h"
+#include <iostream>
 
 
 LinkedList::LinkedList() {
@@ -155,5 +156,13 @@ void LinkedList::insertBeforeNode(int nodenum, std::string num) {
 			// so defaulting to Add function
 			add(num);
 		}
+	}
+}
+
+void LinkedList::display() {
+	Node *node = 0;
+	while (node) {
+		std::cout << node->data;
+		node = node->next;
 	}
 }

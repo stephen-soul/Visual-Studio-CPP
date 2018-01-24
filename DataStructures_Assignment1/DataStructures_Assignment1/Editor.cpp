@@ -18,4 +18,5 @@ void Editor::readFromFile(std::string fileName) {
 		}
 		file.close();
 	}
+	linkedList.display();
 }

@@ -18,6 +18,7 @@ public:
 	void deleteNode(int nodenum);
 	void insertAfterValue(std::string value, std::string num);
 	void insertBeforeNode(int nodenum, std::string num);
+	void display();
 	// Variables
 
 private:
