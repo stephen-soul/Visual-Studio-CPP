@@ -3,17 +3,21 @@
  */
 
 #pragma once
-#include <iostream>
 #include "Node.h"
 
 class LinkedList {
 public:
+	// Make object for node
+	Node *first;
 	// Constructor and virtual destructor
 	LinkedList();
-	~LinkedList();
+	virtual ~LinkedList();
 	// Functions
-	void readIntoLinkedList(std::string fileName);
-
+	void add(std::string num);
+	void deleteValue(std::string value);
+	void deleteNode(int nodenum);
+	void insertAfterValue(std::string value, std::string num);
+	void insertBeforeNode(int nodenum, std::string num);
 	// Variables
 
 private:
