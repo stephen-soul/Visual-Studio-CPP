@@ -8,7 +8,7 @@
 class LinkedList {
 public:
 	// Make object for node
-	Node *first;
+	Node *first, *last;
 	// Constructor and virtual destructor
 	LinkedList();
 	virtual ~LinkedList();

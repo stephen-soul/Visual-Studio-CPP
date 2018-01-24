@@ -10,6 +10,9 @@
 LinkedList::LinkedList() {
 }
 
+/*
+ *	DESTRUCTOR
+ */
 
 LinkedList::~LinkedList() {
 	Node *node = first;
@@ -22,6 +25,10 @@ LinkedList::~LinkedList() {
 		delete temp;
 	}
 }
+
+/*
+ *	ADD TO THE LIST
+ */
 
 void LinkedList::add(std::string num) {
 	Node *node = new Node();
@@ -43,6 +50,10 @@ void LinkedList::add(std::string num) {
 		}
 	}
 }
+
+/*
+ *	DELETE A VALUE
+ */
 
 void LinkedList::deleteValue(std::string value) {
 	Node *node = first;
@@ -67,6 +78,10 @@ void LinkedList::deleteValue(std::string value) {
 		delete node;
 	}
 }
+
+/*
+ *	DELETE A NODE
+ */
 
 void LinkedList::deleteNode(int nodenum) {
 	int index = -1;
@@ -95,6 +110,10 @@ void LinkedList::deleteNode(int nodenum) {
 		delete node;
 	}
 }
+
+/*
+ *	INSERT AFTER CURRENT VALUE
+ */
 
 void LinkedList::insertAfterValue(std::string value, std::string num) {
 	Node *node = new Node();
@@ -125,6 +144,10 @@ void LinkedList::insertAfterValue(std::string value, std::string num) {
 		}
 	}
 }
+
+/*
+ *	INSERT BEFORE CURRENT NODE
+ */
 
 void LinkedList::insertBeforeNode(int nodenum, std::string num) {
 	int index = -1;
@@ -159,10 +182,18 @@ void LinkedList::insertBeforeNode(int nodenum, std::string num) {
 	}
 }
 
+/*
+ *	DISPLAY WHAT'S IN THE NODE
+ */
+
 void LinkedList::display() {
-	Node *node = 0;
-	while (node) {
-		std::cout << node->data;
+	// Get the node, put it at the beginning, while node != nullptr show the data
+	int lineNumber = 0;
+	Node *node = new Node;
+	node = first;
+	while (node != nullptr) {
+		std::cout << lineNumber << ". " << node->data << std::endl;
 		node = node->next;
+		lineNumber++;
 	}
 }

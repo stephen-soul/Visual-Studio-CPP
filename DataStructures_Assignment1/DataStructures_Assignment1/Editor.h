@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include "LinkedList.h"
 
 class Editor {
@@ -13,6 +14,7 @@ public:
 	~Editor();
 	// Functions
 	void readFromFile(std::string fileName);
+	void displayHelpScreen();
 
 	// Variables
 	std::ifstream file;
